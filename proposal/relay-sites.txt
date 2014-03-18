@@ -1,0 +1,37 @@
+Marine Harvest, Caol, Fort William
+56.838641  -5.084208    5m  
+Large shed-like building probably 10m+ high
+Existing Locheilnet link to:
+
+Alcan Pumping Station, above Ft. William
+56.827017  -5.054316   263m 
+I understand existing antennae are attached somehow to a permiter
+fence (at head height?)
+
+Mam a'Creagan (a) Facing Ft. William. 
+  56.874077  -5.418125  220m
+Mam a'Creagan (b) Facing Eigg
+  56.871695  -5.415494 209m
+I assume they are standard ("type 1") relays.  There's a big mast
+nearby that provides power or maybe it comes up from the nearest
+houses (about 700m).  Currently connected by a pair of radios.
+
+Eigg (a) Facing Mam a'Creagan
+    56.893912  -6.156569 188m
+Eigg (b) Facing points North
+    56.883876  -6.157622 218m
+(a) is currently self-powered and may not have a wireless connection
+to (b).  
+(b) is the original mast and has about 1km of cable.  (a) and (b) are
+about 1km apart.  
+
+Beinn Mhialairigh
+      57.148338 -5.643642   212m
+
+Glas Bheinn
+      57.240883  -5.615765   356m
+
+Raasay
+      57.464608   -6.001152  180m
+Sees Applecross, and much of the Applecross peninsula
+(Toscaig, to the S. of Applecross, does not see Glas Bheinn)
