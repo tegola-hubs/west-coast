@@ -1,0 +1,26 @@
+\usepackage{fmtcount}
+\usepackage{xcolor}
+\usepackage{xkeyval}
+\usepackage{graphicx}
+\usepackage[english,british]{babel}
+
+\definecolor{hubsblue}{RGB}{2,72,142}
+\definecolor{hubsgreen}{RGB}{0,105,65}
+\setkeys*{apaper}{
+  logo=hubs-logo.png,
+  color=hubsblue,
+  byline={\footnotesize High-Speed Universal Broadband Services \textsc{c.i.c}\\
+    8\fmtord{th} Floor, Appleton Tower, 11 Crichton St, \textsc{eh8
+      9le}, \textsc{Scotland}\\
+    Company Registration \textsc{sc455437} VAT Number \textsc{gb168666360}.
+  },
+}
+\setkeys*{abook}{
+  color=hubsblue
+}
+\setkeys*{contract}{
+  company={HUBS},
+  companyname={High-Speed Universal Broadband \textsc{c.i.c.}},
+  companyaddr={10 Crichton St.\\Edinburgh, EH8 9AB\\\textsc{Scotland}}
+}
+\hypersetup{allcolors=hubsblue}
