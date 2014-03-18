@@ -1,6 +1,6 @@
 all: west-coast-backbone.pdf
 
-west-coast-backbone.pdf: west-coast-backbone.tex
+west-coast-backbone.pdf: west-coast-backbone.tex link-analysis.tex
 	xelatex -interaction=nonstopmode west-coast-backbone.tex
 	xelatex -interaction=nonstopmode west-coast-backbone.tex
 
