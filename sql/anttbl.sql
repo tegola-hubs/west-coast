@@ -1,3 +1,12 @@
+---
+--- Copyright 2014 Okapi Communications Ltd
+---
+--- This file is free software, or free data depending on how you prefer to
+--- look at it. You may use the CREATE, SELECT and ALTER statements as free
+--- software under the terms of the GNU GPL Version 3 or later, and INSERT
+--- and DELETE statements under the ODBL
+--- 
+BEGIN TRANSACTION;
 INSERT INTO antenna_type (name, frequency, frequency_lower, frequency_upper, antenna_data_file_H, antenna_data_file_V) VALUES
 ('AG-2G16', 2450, 2350, 2550, 'AG-2G16', 'AG-2G16'),
 ('AG-2G16U', 2450, 2350, 2550, 'AG-2G16U', 'AG-2G16U'),
@@ -36,3 +45,4 @@ INSERT INTO antenna_type (name, frequency, frequency_lower, frequency_upper, ant
 ('RD-3G25', 3550, 3400, 3700, 'RD-3G25-Hpol', 'RD-3G25-Vpol'),
 ('RD-5G30', 5650, 5450, 5850, 'RD-5G30-Hpol', 'RD-5G30-Vpol'),
 ('RD-5G34', 5650, 5450, 5850, 'RD-5G34-Hpol', 'RD-5G34-Vpol');
+COMMIT;

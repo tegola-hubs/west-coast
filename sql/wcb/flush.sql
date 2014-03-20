@@ -1,3 +1,4 @@
+BEGIN TRANSACTION;
 DELETE FROM router WHERE site IN (
 	SELECT site.id FROM site
 		JOIN network ON site.network = (SELECT id FROM network WHERE name='WCB'));
@@ -11,3 +12,4 @@ DELETE FROM antenna WHERE cell IN (
 		JOIN network ON cell.network = (SELECT id FROM network WHERE name='WCB'));
 DELETE FROM site WHERE network = (SELECT id FROM network WHERE name='WCB');
 DELETE FROM network WHERE name='WCB';
+COMMIT;
