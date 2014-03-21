@@ -7,3 +7,4 @@ EIG|56.883876|-6.157622|Eigg original mast
 MAH|57.148338|-5.643642|Beinn Mhialairigh
 GLB|57.240883|-5.615765|Glas Bheinn
 RAS|57.464608|-6.001152|Raasay
+KLE|56.868345|-5.309940|Kinlocheil
