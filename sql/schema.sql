@@ -114,7 +114,9 @@ CREATE VIEW ptp AS
 	SELECT
 		c1.id AS c1, c1.name AS c1name,
 		c2.id AS c2, c2.name AS c2name,
-		a1.id AS a1, a2.id AS a2, ST_MakeLine(c1.geom, c2.geom) AS geom
+		a1.id AS a1, a2.id AS a2,
+		c1.network AS n1, c2.network AS n2,
+		ST_MakeLine(c1.geom, c2.geom) AS geom
 	FROM antenna AS a1
 		JOIN antenna AS a2 ON a1.ptp = a2.cell AND a2.ptp = a1.cell
 		JOIN cell AS c1 ON a1.cell = c1.id
