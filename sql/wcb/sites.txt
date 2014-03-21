@@ -1,7 +1,7 @@
 MHC|56.838641|-5.084208|Marine Harvest, Caol, Fort William
 ALC|56.827017|-5.054316|Alcan Pumping Station, above Ft. William
-MCA|56.874077|-5.418125|Mam a'Creagan (a) Facing Ft. William
-MCB|56.871695|-5.415494|Mam a'Creagan (b) Facing Eigg
+MCA|56.871695|-5.415494|Mam a'Creagan (a) Facing Ft. William
+MCB|56.874077|-5.418125|Mam a'Creagan (b) Facing Eigg
 EIX|56.893912|-6.156569|Eigg facing Mam a'Creagan
 EIG|56.883876|-6.157622|Eigg original mast
 MAH|57.148338|-5.643642|Beinn Mhialairigh
