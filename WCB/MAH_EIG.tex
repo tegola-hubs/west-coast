@@ -1,0 +1,118 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolortrue
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+  \setlength{\unitlength}{0.0500bp}%
+  \begin{picture}(8280.00,8640.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \csname LTb\endcsname%
+      \put(946,2554){\makebox(0,0)[r]{\strut{} 0}}%
+      \put(946,3597){\makebox(0,0)[r]{\strut{} 50}}%
+      \put(946,4640){\makebox(0,0)[r]{\strut{} 100}}%
+      \put(946,5682){\makebox(0,0)[r]{\strut{} 150}}%
+      \put(946,6725){\makebox(0,0)[r]{\strut{} 200}}%
+      \put(946,7768){\makebox(0,0)[r]{\strut{} 250}}%
+      \put(1240,1364){\makebox(0,0){\strut{} 0}}%
+      \put(1995,1364){\makebox(0,0){\strut{} 5000}}%
+      \put(2750,1364){\makebox(0,0){\strut{} 10000}}%
+      \put(3505,1364){\makebox(0,0){\strut{} 15000}}%
+      \put(4259,1364){\makebox(0,0){\strut{} 20000}}%
+      \put(5014,1364){\makebox(0,0){\strut{} 25000}}%
+      \put(5769,1364){\makebox(0,0){\strut{} 30000}}%
+      \put(6524,1364){\makebox(0,0){\strut{} 35000}}%
+      \put(7279,1364){\makebox(0,0){\strut{} 40000}}%
+      \put(176,4979){\rotatebox{-270}{\makebox(0,0){\strut{}Elevation (meters)}}}%
+      \put(4480,1034){\makebox(0,0){\strut{}Distance (meters)}}%
+      \put(1240,2215){\makebox(0,0)[l]{\strut{}Path length:}}%
+      \put(2601,2215){\makebox(0,0)[l]{\strut{}42931 meters}}%
+      \put(1240,2011){\makebox(0,0)[l]{\strut{}Frequency:}}%
+      \put(2601,2011){\makebox(0,0)[l]{\strut{}5650 MHz}}%
+      \put(1240,1807){\makebox(0,0)[l]{\strut{}Path loss:}}%
+      \put(2601,1807){\makebox(0,0)[l]{\strut{}-140 dB}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+      \csname LTb\endcsname%
+      \put(3454,613){\makebox(0,0)[r]{\strut{}Elevation Profile}}%
+      \csname LTb\endcsname%
+      \put(3454,393){\makebox(0,0)[r]{\strut{}Sea Level}}%
+      \csname LTb\endcsname%
+      \put(3454,173){\makebox(0,0)[r]{\strut{}Reflected path}}%
+      \csname LTb\endcsname%
+      \put(6685,613){\makebox(0,0)[r]{\strut{}First Fresnel Zone}}%
+      \csname LTb\endcsname%
+      \put(6685,393){\makebox(0,0)[r]{\strut{}Direct path}}%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics{html/WCB/MAH_EIG}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup
