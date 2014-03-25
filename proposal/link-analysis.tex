@@ -1,1 +1,35 @@
 \section{Link Analysis}
+
+Will a wireless link from $A$ to $B$ work? What speeds can be
+expected? How much transmit power is necessary and what kind of
+antennae should be used? To answer these questions we do a link budget
+calculation. Roughly speaking this is,
+\begin{equation}
+  P_r = P_t + G - L
+\end{equation}
+or, the received power is equal to the transmit power, plus gains, and
+minus losses. We then check in the manufacturer's table to see if the
+received power is sufficient to maintain a link and at what speed.
+
+The main difficulty is in figuring out what $L$ is, because there are
+lots of different sources of loss, for example:
+\begin{itemize
+  \item cable loss caused by electrical resistance of a feedline
+    between  between the radio and the antenna
+  \item insertion loss caused by the use of connectors to attach the
+    feedline
+  \item path loss caused by the spreading out of energy in space (this
+    is your ``inverse-$r^2$'' loss)
+  \item path loss related to the decreasing ability of an antenna to
+    ``hear'' radio waves as the frequency increases (this loss is
+    proportional to the square of the frequency)
+  \item multi-path loss where two signals from
+    the same transmitter follow different paths to the receiver and
+    interfere destructively with one another
+  \item absorption, primarily by water in the air such as rain and
+    fog, but also at higher frequencies by elements such as oxygen and
+    nitrogen an effect which varies depending on frequency.
+\end{itemize}
+
+To see how this works, let us take a specific example, the link from
+Eigg to Kinlocheil. 
