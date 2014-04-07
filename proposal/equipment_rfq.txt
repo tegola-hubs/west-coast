@@ -1,0 +1,74 @@
+Subject: Licensed Wireless RFQ
+
+Okapi Communications together with HUBS and community network
+operators on the West coast of Scotland is planning a high-capacity
+backbone to link these networks together and to upstream connectivity
+in Fort William and eventually Kyle of Lochalsh and Oban. The proposed
+network spans some 200km of hills and sea.
+
+Many of the communities involved operate their own local networks and
+have done for some time. The purpose of this RFQ is to ascertain costs
+for licensed wireless links to connect them together. Initial capacity
+required on each link is in the neighbourhood of 100Mbps but should be
+upgradeable to several hunderd Mbps. In all cases the interface should
+be 1000BaseTX and the radio equipment should pass 802.1q and MPLS
+frames without modification.
+
+Sites germane to this RFQ are as follows:
+
+    | Site |  Latitude | Longitude | Height |
+    |------+-----------+-----------+--------|
+    | ALC  | 56.827017 | -5.054316 |    261 |
+    | EIG  | 56.883876 | -6.157622 |    231 |
+    | GLB  | 57.240883 | -5.615765 |    374 |
+    | KLE  | 56.868345 | -5.309940 |    444 |
+    | MHC  | 56.838641 | -5.084208 |      9 |
+    | RAN  | 56.878275 | -5.513331 |    291 |
+
+The heights in the table are ground level in meters above sea
+level. Masts are taken to be be 3m above ground level. Installation
+will normally be undertaken by ourselves with outside assistance as
+needed.
+
+In total there are some 6-10 links involved in the project, most of
+them medium-long range, however representative ones for which the
+sites included in the above table were chosen are:
+
+  * ALC - MHC: a short link
+  * EIG - RAN: a medium distance link
+  * EIG - KLE: a long link with no risk of tidal multipath
+  * EIG - GLB: a long link with tidal multipath
+
+For each of these representative links, please reply with
+recommendations and pricing mentioning:
+
+  * Frequency band
+  * Radio equipment
+  * Antennas
+  * Mounting requirements
+  * Any special requirements
+  * Volume purchase discount scale
+
+Please mind that this is a community driven endeavour and entirely not
+for profit in nature.
+
+About HUBS
+----------
+
+HUBS is a not-for-profit membership organisation of community network
+operators. Its purpose is to facilitate operation at scale through
+collective purchasing and pooling of engineering resources. HUBS is
+currently facilities based in the South of Scotland.
+
+http://hubs.net.uk/
+
+About Okapi
+-----------
+
+Okapi Communications is an network engineering consultancy that
+assists with design, implementation and operation of communications
+infrastructure. Okapi is responsible for the operation of HUBS and
+several of its members' networks.
+
+http://okapi.cc/
+http://okapi.mobi/
