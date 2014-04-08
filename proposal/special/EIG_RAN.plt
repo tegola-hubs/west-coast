@@ -13,7 +13,7 @@ plot 	"./EIG_RAN_terrain.dat" using 1:2 with lines title "Elevation Profile" lt 
 set title "Point to Point link: EIG -> RAN"
 set key bmargin left horizontal
 set label "Path length:" offset graph 0.0,-0.05
-set label "39260 meters" offset graph 0.2,-0.05
+set label "39261 meters" offset graph 0.2,-0.05
 set label "Frequency:" offset graph 0.0,-0.08
 set label "5650 MHz" offset graph 0.2,-0.08
 set label "Path loss:" offset graph 0.0,-0.11

@@ -16,4 +16,4 @@ d.barscale at=5,95
 d.mon stop=PNG
 
 o.pointtopoint network=WCB dem=profile_dtm dsn=dbname=grass \
-   output=. where="s1.name='EIG' AND s2.name='RAN'"
+   region=region=wcb output=. where="s1.name='EIG' AND s2.name='RAN'"
