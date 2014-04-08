@@ -14,3 +14,6 @@ d.vect map=site_grass type=point icon=basic/star color=red fcolor=red size=25 at
 d.barscale at=5,95
 
 d.mon stop=PNG
+
+o.pointtopoint network=WCB dem=profile_dtm dsn=dbname=grass \
+   output=. where="s1.name='EIG' AND s2.name='RAN'"
