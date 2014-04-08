@@ -4,66 +4,6 @@ INSERT INTO antenna (cell, ptp, type, name, description, transmit_power, height_
 VALUES
 
 
-((SELECT id FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM antenna_type WHERE name='HP3'),
- 'MHC-ALC-PTP',
- 'Point to Point: ' || 
-    (SELECT description FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')) ||
-    ' to ' ||
-    (SELECT description FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 127.920848841, 6.31283646582),
-
-((SELECT id FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM antenna_type WHERE name='HP3'),
- 'ALC-MHC-PTP',
- 'Point to Point: ' || 
-    (SELECT description FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')) ||
-    ' to ' ||
-    (SELECT description FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 127.920848841, -6.46001267803),
-
-((SELECT id FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM site WHERE name='MCA' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM antenna_type WHERE name='HP3'),
- 'ALC-MCA-PTP',
- 'Point to Point: ' || 
-    (SELECT description FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')) ||
-    ' to ' ||
-    (SELECT description FROM site WHERE name='MCA' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 105.430966169, -0.101199596347),
-
-((SELECT id FROM site WHERE name='MCA' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM antenna_type WHERE name='HP3'),
- 'MCA-ALC-PTP',
- 'Point to Point: ' || 
-    (SELECT description FROM site WHERE name='MCA' AND network=(SELECT id FROM network WHERE name='WCB')) ||
-    ' to ' ||
-    (SELECT description FROM site WHERE name='ALC' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 105.430966169, 0.0864889305524),
-
-((SELECT id FROM site WHERE name='MCB' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM site WHERE name='EIX' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM antenna_type WHERE name='HP3'),
- 'MCB-EIX-PTP',
- 'Point to Point: ' || 
-    (SELECT description FROM site WHERE name='MCB' AND network=(SELECT id FROM network WHERE name='WCB')) ||
-    ' to ' ||
-    (SELECT description FROM site WHERE name='EIX' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 96.0367175789, -0.0366987468464),
-
-((SELECT id FROM site WHERE name='EIX' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM site WHERE name='MCB' AND network=(SELECT id FROM network WHERE name='WCB')),
- (SELECT id FROM antenna_type WHERE name='HP3'),
- 'EIX-MCB-PTP',
- 'Point to Point: ' || 
-    (SELECT description FROM site WHERE name='EIX' AND network=(SELECT id FROM network WHERE name='WCB')) ||
-    ' to ' ||
-    (SELECT description FROM site WHERE name='MCB' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 96.0367175789, 0.0341590412792),
-
 ((SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='MAH' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM antenna_type WHERE name='HP3'),
@@ -72,7 +12,7 @@ VALUES
     (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='MAH' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 49.9462602923, -0.0080077958267),
+    27, 3, 49.9462602923, -0.0118796059775),
 
 ((SELECT id FROM site WHERE name='MAH' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -82,7 +22,7 @@ VALUES
     (SELECT description FROM site WHERE name='MAH' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 49.9462602923, 0.00707355699427),
+    27, 3, 49.9462602923, 0.00520566559607),
 
 ((SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -92,7 +32,7 @@ VALUES
     (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 42.850920961, 0.158673364677),
+    27, 3, 42.850920961, 0.14867998668),
 
 ((SELECT id FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -102,7 +42,7 @@ VALUES
     (SELECT description FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 42.850920961, -0.158673364677),
+    27, 3, 42.850920961, -0.14867998668),
 
 ((SELECT id FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='RAS' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -112,7 +52,7 @@ VALUES
     (SELECT description FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='RAS' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 140.251718139, -0.307762024759),
+    27, 3, 140.251718139, -0.292618181656),
 
 ((SELECT id FROM site WHERE name='RAS' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -122,7 +62,7 @@ VALUES
     (SELECT description FROM site WHERE name='RAS' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='GLB' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 140.251718139, 0.307762024759),
+    27, 3, 140.251718139, 0.290262479097),
 
 ((SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -132,7 +72,7 @@ VALUES
     (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 95.0450506455, 0.234632203745),
+    27, 3, 95.0450506455, 0.231508028036),
 
 ((SELECT id FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -142,7 +82,7 @@ VALUES
     (SELECT description FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 95.0450506455, -0.236072348523),
+    27, 3, 95.0450506455, -0.231508028036),
 
 ((SELECT id FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -152,7 +92,7 @@ VALUES
     (SELECT description FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 106.183269742, -1.76080514864),
+    27, 3, 106.183269742, -1.748294457),
 
 ((SELECT id FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
  (SELECT id FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')),
@@ -162,5 +102,45 @@ VALUES
     (SELECT description FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')) ||
     ' to ' ||
     (SELECT description FROM site WHERE name='KLE' AND network=(SELECT id FROM network WHERE name='WCB')),
-    27, 3, 106.183269742, 1.76080514864);
+    27, 3, 106.183269742, 1.74546267078),
+
+((SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM antenna_type WHERE name='HP3'),
+ 'EIG-RAN-PTP',
+ 'Point to Point: ' || 
+    (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')) ||
+    ' to ' ||
+    (SELECT description FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')),
+    27, 3, 94.1237468611, 0.0700240877746),
+
+((SELECT id FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM antenna_type WHERE name='HP3'),
+ 'RAN-EIG-PTP',
+ 'Point to Point: ' || 
+    (SELECT description FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')) ||
+    ' to ' ||
+    (SELECT description FROM site WHERE name='EIG' AND network=(SELECT id FROM network WHERE name='WCB')),
+    27, 3, 94.1237468611, -0.0700240877746),
+
+((SELECT id FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM antenna_type WHERE name='HP3'),
+ 'RAN-MHC-PTP',
+ 'Point to Point: ' || 
+    (SELECT description FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')) ||
+    ' to ' ||
+    (SELECT description FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
+    27, 3, 102.333290141, -0.583080421147),
+
+((SELECT id FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')),
+ (SELECT id FROM antenna_type WHERE name='HP3'),
+ 'MHC-RAN-PTP',
+ 'Point to Point: ' || 
+    (SELECT description FROM site WHERE name='MHC' AND network=(SELECT id FROM network WHERE name='WCB')) ||
+    ' to ' ||
+    (SELECT description FROM site WHERE name='RAN' AND network=(SELECT id FROM network WHERE name='WCB')),
+    27, 3, 102.333290141, 0.583080421147);
 COMMIT;
