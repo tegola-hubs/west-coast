@@ -1,0 +1,9 @@
+If importing from the US, I think radios are
+
+   http://ec.europa.eu/taxation_customs/dds2/taric/measures.jsp?Lang=en&SimDate=20140414&Area=US&Taric=8517610090&LangDescr=en
+
+and should be marked:
+
+    Goods nomenclature code: 8517610090
+
+and are not subject to duty and tax (pace VAT)
