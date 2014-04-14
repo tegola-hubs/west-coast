@@ -1,6 +1,6 @@
 export GRASS_WIDTH=800
 export GRASS_HEIGHT=525
-export GRASS_PNGFILE=EIG_RAN_map.png
+export GRASS_PNGFILE=COR_MAH_map.png
 
 d.mon start=PNG
 
