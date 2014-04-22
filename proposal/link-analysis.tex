@@ -1,4 +1,5 @@
 \section{Link Analysis}
+\label{sec:link_analysis}
 
 Will a wireless link from $A$ to $B$ work? What speeds can be
 expected? How much transmit power is necessary and what kind of
@@ -105,7 +106,7 @@ reproduced in figure \ref{fig:rocket_txrx}.
   \begin{center}
     \begin{tabular}{lrrr}
       Modulation & Line rate & TX power & RX sensitivity\\
-      \hline
+      \hline\\
       MCS0 & $6.5\, \mathrm{Mbps}$ & $27\, \mathrm{dBm}$ & $-96\,\mathrm{dBm}$\\
       MCS1 & $13\, \mathrm{Mbps}$ & $27\, \mathrm{dBm}$ & $-95\,\mathrm{dBm}$\\
       MCS2 & $19.5\, \mathrm{Mbps}$ & $27\, \mathrm{dBm}$ & $-92\,\mathrm{dBm}$\\
@@ -135,7 +136,7 @@ dual-polarised antennas, we will never see the MCS0-MCS7 modulation
 schemes because these are for single data streams. So the only ones of
 interest are MCS8-MCS15. The transmit power that the radios are
 capable of is less at the higher modulations. For example if we want
-full speed, we can only transmit at $21\, \mathrm{dBm}$ -- that's four
+full speed, we can only transmit at 21dBm -- that's four
 times weaker than at full power (because $10^{0.3} \approx 2$). 
 
 Supposing that we want as fast as possible a link, we need to adjust
@@ -143,39 +144,80 @@ our calculation above setting $P_t = 21$ and so we now get
 $P_r = -59\, \mathrm{dBm}$.
 
 Also, the receive sensitivty for the slower rates is really very good,
-better than $-90\, \mathrm{dBm}$. In practice we will never see links
+better than -90dBm. In practice we will never see links
 established with signal strengths at or near that range because of
 ambient noise -- which tends to be at about that level.
 
 The meaning of the receive sensitivity is that the receiver part of
 the radio needs a signal at least that strong in order to establish a
 connection at a given data rate. So we have calculated that we should
-see a $P_r$ of $-59\, \mathrm{dBm}$ and we only need $-75\, \mathrm{dBm}$.
-That's pretty good, there's a margin of $16\, \mathrm{dB}$ and all
+see a $P_r$ of -59dBm and we only need -75dBm.
+That's pretty good, there's a margin of 16dB and all
 else being equal the link should work.
 
-Actually $16\, \mathrm{dB}$ is fairly thin. \textbf{Typically a margin
-  of $20-25\, \mathrm{dB}$ is used to be confident that a link will
+Actually 16dB is fairly thin. \textbf{Typically a margin
+  of 20-25dB is used to be confident that a link will
   work well}. Remember that dishes move in the wind, alignment never
 stays perfect, though manufacturing quality is generally pretty good,
 it isn't perfect. The response of the antennas is not flat over their
 entire operating range and they can never be absolutely perfectly
 matched. There are also cable and connector losses at either end that
-might run to $1.5\, \mathrm{dB}$.
+might run to 1.5dB.
+
+\subsection{Link margins}
+\label{sec:margins}
+
+Different vendors support different modulation rates at different
+signal strengths. What's more, the values from the manufacturer's spec
+sheet are often optimistic. For a good example see figure
+\ref{fig:thrashing}. In that case we might expect a 700 Mbps 64QAM
+link at a receive signal level of no less than -66dBm. What we see is
+a somewhat weaker signal and the radio frequently changing back and
+forth between 64QAM and 16QAM. This instability extends for at least
+4dB on either side of the threshold listed in the specifications for
+these radios.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=\textwidth]{af24-cor-signal.png}
+    \includegraphics[width=\textwidth]{af24-cor-cap.png}
+  \end{center}
+  \caption{Pathological signal strength and channel capacity}
+  \label{fig:thrashing}
+\end{figure}
+
+Part of this may be due to the varying receive signal strength. This
+is most likely caused by the mast at the far end of this link
+vibrating in the wind -- it is in a high up and exposed place.
+
+Towards the right-hand side of the graph there is a dip of about
+1dB. The cause of this is unclear, it may be due to rain or hot/cold
+air currents. It certainly lasts too long to be attributable to
+vibration. We have seen similar dips of up to 5dB, which is
+significant. 
+
+These effects are fairly pronounced because the link in question is at
+a very high frequency, 24GHz. The same phenomena affect lower
+frequencies as well.
+
+So all told, if we have to account for perhaps 8dB of inaccuracy in
+the manufacturer's spec sheet, 5dB for atmospheric effects, a few, say
+3-6dB for alignment tolerance, we want to engineer these links to
+exceed the numbers on paper with a margin of at least 15dB and 20-25dB
+would be much safer.
 
 \subsection{Regulatory Limits}
 \label{sec:regulatory}
 
 But then we remember. In the UK, the power limits for the upper part
-of the $5\,\mathrm{GHz}$ band are $36\, \mathrm{dBm}$. The limits for
-\textit{Band C} are set out in \cite{IR2007} and for \textit{Band A}
-and \textit{Band B} in \cite{IR2006}. That means with a $30\,
-\mathrm{dBi}$ dish, we are only allowed to run the transmitter at $6\,
-\mathrm{dBm}$ not $21$. That has just eaten up our entire margin!
+of the 5GHz band are 36dBm. The limits for \textit{Band C} are set out
+in \cite{IR2007} and for \textit{Band A} and \textit{Band B} in
+\cite{IR2006}. That means with a 30dBi dish, we are only allowed to
+run the transmitter at 6dBm not 21. That has just eaten up our entire
+margin!
 
 So, how long a link can we do \textit{legally}? We have enough
-information to work this out. Assuming a $20\, \mathrm{dB}$ margin, we
-know that,
+information to work this out. Assuming a 20dB margin, we know that,
 $$
 -75 + 20 = 6 + 30 + 30 + 20 \times
 \log \left(\frac{0.053}{4 \times \pi \times R} \right)
@@ -189,11 +231,10 @@ R = \frac{%
 } = 4732\, \mathrm{m}
 $$
 
-Yes, that's $4.7\, \mathrm{km}$. Using bigger $34\, \mathrm{dBi}$
-dishes improves this to about $7.5\, \mathrm{km}$. With a thinner
-margin and tolerating a lower data rate at MCS12, we can eak out close
-to $25\, \mathrm{km}$. Using the normal dishes, the best we can hope
-for is about $15\, \mathrm{km}$ Any longer than that, and rules are
+Yes, that's 4.7km. Using bigger 34dBi dishes improves this to about
+7.5km. With a thinner margin and tolerating a lower data rate at
+MCS12, we can eak out close to 25km. Using the normal dishes, the best
+we can hope for is about 15km Any longer than that, and rules are
 definitely being broken. And the link that we are considering is more
 than twice the best that we could possibly do.
 
@@ -215,7 +256,13 @@ $\frac{1}{16}$ of \textit{Band C}. In other words using the middle,
 lower power and unlicensed bannd, the best we can hope for is about a
 kilometer.
 
+\newpage
 \subsection{Fresnel Zones}
+
+So now that we have a reasonable handle on the links themselves, lets
+put them into context. Figure \ref{fig:EIG_RAN_profile} shows what the
+path looks like from the side. The profile of the sea and the hills is
+corrected for the curvature of the earth, which matters.
 
 \begin{figure}[h]
   \begin{center}
@@ -224,11 +271,6 @@ kilometer.
     \label{fig:EIG_RAN_profile}
   \end{center}
 \end{figure}
-
-So now that we have a reasonable handle on the links themselves, lets
-put them into context. Figure \ref{fig:EIG_RAN_profile} shows what the
-path looks like from the side. The profile of the sea and the hills is
-corrected for the curvature of the earth, which matters.
 
 It is important that there are no obstruction. Rock and, to a lesser
 extent trees and vegetation causes extremely high loss. A signal is
@@ -263,7 +305,7 @@ hill itself and will never reach the receiver to interfere.
   \begin{center}
     \begin{tabular}{l|rrrr}
       $rain\backslash f$ & $6$ & $11$ & $18$ & $23$ \\
-      \hline
+      \hline\\
       $2.5$ & $< 0.1$ & $< 0.1$ & $0.1$ & $0.3$\\
       $5$   & $< 0.1$ & $0.1$ & $0.3$ & $0.9$\\ 
       $12.5$ & $< 0.1$ & $0.6$ & $1.5$ & $3$\\
@@ -291,17 +333,15 @@ rough, being read off a chart in a report published in the 1970s by
 the Rand Corporation for the US Air Force, but they should be fairly
 accurate.
 
+It is easy to see that even very heavy rain does not affect the 6GHz
+band very much. On the other hand even moderately heavy rain can badly
+affect a 23GHz link. This is one reason why licenses for the higher
+frequencies are cheaper than for the lower ones. At higher
+frequencies, a rainy day can easily attenuate a signal on a short 5km
+link by maybe 15dB which will seriously impact its performance. Longer
+links at high frequencies are just not feasible.
 
-It is easy to see that even very heavy rain does not affect the
-$6\,\mathrm{GHz}$ band very much. On the other hand even moderately
-heavy rain can badly affect a $23\, \mathrm{GHz}$ link. This is one
-reason why licenses for the higher frequencies are cheaper than for
-the lower ones. At higher frequencies, a rainy day can easily
-attenuate a signal on a short $5\, \mathrm{km}$ link by maybe $15\,
-\mathrm{dB}$ which will seriously impact its performance. Longer links
-at high frequencies are just not feasible.
-
-In Scotland we should budget for $15\, \mathrm{mm/hr}$ of rain inland,
-$20\, \mathrm{mm/hr}$ of rain in coastal areas and $25\,\mathrm{mm/hr}$
+In Scotland we should budget for 15mm/hr of rain inland,
+20mm/hr of rain in coastal areas and 25mm/hr
 in the Outer Isles.
 

@@ -1,3 +1,43 @@
 \section{Licensing}
 
-Fees... \cite{OfcomSpectrum}
+The reasons that we need to to move to licensed wireless links for
+this project are worked out in detail in section
+\ref{sec:link_analysis} and particularly the part about regulatory
+limits \ref{sec:regulatory}. If we want to make high bandwidth links
+over long distances the physics simply doesn't allow it within the
+legal power limits.
+
+So how does licensed spectrum work? This is discussed in
+\cite{OfcomSpectrum}, and particularly the appendix called ``Fixed
+link algorithm'' spells it out. This has to be worked out per link.
+
+The first part of working it out is to answer the question, ``how much
+spectrum do we want?'' The pricing is in 1 MHz increments and costs
+£88/MHz per year. If we want to use 20MHz channels that costs
+\pounds 1760. 56MHz channels, the widest commonly in use, is \pounds 
+4928.
+
+Next, what band do we want the license in? There is a discount applied
+to some bands. The reason is because as frequency increases the
+distances that are possible to achieve decrease. Again this is worked
+out in section \ref{sec:link_analysis}. For 6 GHz, the discount is
+26\%. For 11 and 13 GHz it is 57\%. For long links we have to use 6
+GHz because much more than that and we need unreasonable output power
+and unreasonably large antennas. So applying this, our 20 MHz channel
+costs \pounds 1272.80 and our 56 MHz channel costs \pounds 3646.72.
+
+There is a penalty charge for using lower frequencies where a link
+would be possible with a higher one. That doesn't apply here.
+
+There is also a charge relating to output power, which is called the
+``availability factor''. Basically if we want to have a sufficiently
+large margin in our link budget to overcome rare events link monsoons
+we can have that, at a cost. We don't need that.
+
+\begin{figure}[h]
+  \begin{center}
+    \input{licensing_costs}
+  \end{center}
+  \caption{Ofcom licensing costs, per link, in 6 and 11 GHz}
+  \label{fig:license_costs}
+\end{figure}
