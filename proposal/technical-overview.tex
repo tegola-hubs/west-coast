@@ -1,2 +1,50 @@
+\section{Addressing}
 
+IP addressing is crucially important for any Internet service. Indeed
+with the current arrangement on the West Coast, where several networks
+are sharing a small number of IP addresses -- in some cases just a
+single one -- amongst their users, the case can be made that they are
+not providing Internet access at all. There might be some hyperbole in
+that statement, but not much.
 
+Here are some reasons why IP addresses are important and using address
+translation is not desireable:
+\begin{itemize}
+  \item Bad behaviour by one individual -- purposeful or accidental --
+    and the reaction of others on the Internet affects everyone who is
+    sharing the same address. Concretely, Google may stop answering
+    search queries from the entire network because it thinks that it
+    is one computer infected by a virus.
+  \item Tracking usage to its source is very difficult. This is
+    because of the information loss at the border where address
+    translation happens. This means that it is not easily possible to
+    notify the relevant user or take whatever action is necessary in
+    case of complaints or legal action.
+  \item While looking at web sites may work, other things that one
+    might want to use the Internet for can break in a variety of
+    ways. Particularly susceptible to this are VoIP (internet
+    telephony) and GSM mobile pico-cells.
+  \item Running services is not possible. Perhaps someone wants to run
+    a web server to serve images from their camera looking at the
+    beautiful scenery, or run an ssh server so that they can connect
+    to their home computer while they are away elsewhere. Perhaps some
+    parts of the network need to be instrumented and monitored, or
+    data from a weather station or electricity generation system
+    collected. These things are possible but very difficult without IP
+    addresses.
+\end{itemize}
+
+Though IPv4 addresses are scarce and becoming difficult to obtain, it
+is still possible for a new Internet Service Provider to obtain
+them. This means joining the RIPE internet registry, and only one
+new block of IPv4 addresses will be allocated -- a /22 network which
+contains 1024 addresses. As a member of RIPE it is also possible to
+purchase or lease additional addresses on the open market at a cost in
+the neighbourhood of \pounds 10-20 at the time of writing.
+
+Joining RIPE has a cost \cite{RIPECharges}. The sign-up fee is \euro
+2000. Then there is an ongoing yearly membership fee of \euro 1750
+plus \euro 50 per address block.
+
+It is a requirement for obtaining IPv4 addresses to also implement
+IPv6.

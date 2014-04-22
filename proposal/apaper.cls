@@ -51,7 +51,7 @@
 %
 \makeatletter%
   \def \maketitle {%%
-    \hypersetup{pdftitle={\@title{}},allcolors=apapercolor}%
+    \hypersetup{pdftitle={\@title{}},linkcolor=apapercolor,anchorcolor=apapercolor,citecolor=apapercolor,filecolor=apapercolor,urlcolor=apapercolor}%
     \thispagestyle{empty}%
     \par%
     \begin{minipage}[t]{0.15\textwidth}%
@@ -162,6 +162,12 @@
       \textsc{\large Annexe \theannexe\\#1}%
     \end{center}%
     \par\vspace{\baselineskip}%
+  }
+  \newcommand{\pdfannexe}[2]{%
+    \clearpage%
+    \refstepcounter{annexe}%
+    \addcontentsline{toc}{section}{Annexe \theannexe: #1}%
+    \includepdf[pages=-,scale=0.8,pagecommand={\lhead{\textsc{Annexe \theannexe: #1}}}]{#2}%
   }
 \makeatother
 \endinput
