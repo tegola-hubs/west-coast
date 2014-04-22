@@ -164,12 +164,14 @@ matched. There are also cable and connector losses at either end that
 might run to $1.5\, \mathrm{dB}$.
 
 \subsection{Regulatory Limits}
+\label{sec:regulatory}
 
 But then we remember. In the UK, the power limits for the upper part
-of the $5\,\mathrm{GHz}$ band are $36\, \mathrm{dBm}$. That means with
-a $30\, \mathrm{dBi}$ dish, we are only allowed to run the transmitter
-at $6\, \mathrm{dBm}$ not $21$. That has just eaten up our entire
-margin!
+of the $5\,\mathrm{GHz}$ band are $36\, \mathrm{dBm}$. The limits for
+\textit{Band C} are set out in \cite{IR2007} and for \textit{Band A}
+and \textit{Band B} in \cite{IR2006}. That means with a $30\,
+\mathrm{dBi}$ dish, we are only allowed to run the transmitter at $6\,
+\mathrm{dBm}$ not $21$. That has just eaten up our entire margin!
 
 So, how long a link can we do \textit{legally}? We have enough
 information to work this out. Assuming a $20\, \mathrm{dB}$ margin, we
@@ -194,6 +196,24 @@ to $25\, \mathrm{km}$. Using the normal dishes, the best we can hope
 for is about $15\, \mathrm{km}$ Any longer than that, and rules are
 definitely being broken. And the link that we are considering is more
 than twice the best that we could possibly do.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=\textwidth]{spectrum.png}
+  \end{center}
+  \caption{The 5 GHz band}
+  \label{fig:5GHz}
+\end{figure}
+
+It is worth remembering as well that \textit{Band C} is fairly narrow,
+and there is a notch carved out of it in the middle (see figure
+\ref{fig:5GHz}). This means that there is only 70MHz + 35MHz that is
+actually useable. It would be tempting to use \textit{Band B} but the
+power limit is only $\frac{1}{4}$ that of \textit{Band C}. That means
+that the distances that can be expected when keeping to the rules are
+$\frac{1}{16}$ of \textit{Band C}. In other words using the middle,
+lower power and unlicensed bannd, the best we can hope for is about a
+kilometer.
 
 \subsection{Fresnel Zones}
 
@@ -239,22 +259,7 @@ hill itself and will never reach the receiver to interfere.
 
 \subsection{Rain Fade}
 
-All the previous sections on link budgets and loss apply at pretty
-much every frequency. Lower frequencies can go farther with the same
-power and gain, Fresnel Zones are thinner at higher frequencies, but
-the effects and the calculations are exactly the same. There is,
-however, an important phenomenon that starts to come into play at
-higher frequencies -- attenuation by water in the air. In other words,
-rain. The higher the frequency the more this matters and needs to be
-explicitly taken into account starting at around $6\, \mathrm{GHz}$. 
-
-Figure \ref{fig:rain_fade} lists the attenuation that can be expected
-at different frequencies, at different rates of rain.  The numbers are
-rough, being read off a chart in a report published in the 1970s by
-the Rand Corporation for the US Air Force, but they should be fairly
-accurate.
-
-\begin{figure}
+\begin{figure}[h]
   \begin{center}
     \begin{tabular}{l|rrrr}
       $rain\backslash f$ & $6$ & $11$ & $18$ & $23$ \\
@@ -270,6 +275,22 @@ accurate.
     in GHz. Values in the table are dB/km.}
   \label{fig:rain_fade}
 \end{figure}
+
+All the previous sections on link budgets and loss apply at pretty
+much every frequency. Lower frequencies can go farther with the same
+power and gain, Fresnel Zones are thinner at higher frequencies, but
+the effects and the calculations are exactly the same. There is,
+however, an important phenomenon that starts to come into play at
+higher frequencies -- attenuation by water in the air. In other words,
+rain. The higher the frequency the more this matters and needs to be
+explicitly taken into account starting at around $6\, \mathrm{GHz}$. 
+
+Figure \ref{fig:rain_fade} lists the attenuation that can be expected
+at different frequencies, at different rates of rain.  The numbers are
+rough, being read off a chart in a report published in the 1970s by
+the Rand Corporation for the US Air Force, but they should be fairly
+accurate.
+
 
 It is easy to see that even very heavy rain does not affect the
 $6\,\mathrm{GHz}$ band very much. On the other hand even moderately
