@@ -14,8 +14,8 @@ colour2=cyan
 colour2l=blue
 colour3=green
 colour3l=red
-colour4=yellow
-colour4l=yellow
+colour4=violet
+colour4l=violet
 
 d.vect map=ptp_grass type=line display=shape color=${colour2l} width=4 where="cat_=2"
 d.vect map=ptp_grass type=line display=shape color=${colour3l} width=4 where="cat_=3"
