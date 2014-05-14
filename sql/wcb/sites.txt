@@ -1,8 +1,12 @@
-MHC|56.838641|-5.084208|Marine Harvest, Caol, Fort William
-EIX|56.893912|-6.156569|Eigg facing Mam a'Creagan
-EIG|56.883876|-6.157622|Eigg original mast
-MAH|57.148338|-5.643642|Beinn Mhialairigh
-GLB|57.240883|-5.615765|Glas Bheinn
-RAS|57.464608|-6.001152|Raasay
-KLE|56.868345|-5.309940|Kinlocheil
-RAN|56.879109|-5.513750|Ranachan
+MHC|56.838641|-5.084208|Marine Harvest, Caol, Fort William|3
+EIX|56.893912|-6.156569|Eigg facing Mam a'Creagan|0
+EIG|56.883876|-6.157622|Eigg original mast|2
+MAH|57.148338|-5.643642|Beinn Mhialairigh|2
+GLB|57.240883|-5.615765|Glas Bheinn|4
+RAS|57.464608|-6.001152|Raasay|4
+RAN|56.879109|-5.513750|Ranachan|4
+MAI|56.632316|-6.133231|Meall an Invhire|4
+OBN|56.424329|-5.449657|Oban|3
+KYL|57.279796|-5.714022|Kyle Train Station|3
+SMO|57.086327|-5.873280|Sabhal Mor Ostaig|2
+CGD|57.039819|-5.741628|Creagan Dearga|2

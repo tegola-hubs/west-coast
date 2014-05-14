@@ -11,7 +11,8 @@ CREATE TEMPORARY TABLE sites_tmp (
 	name VARCHAR(128),
 	lat FLOAT,
 	lon FLOAT,
-	description TEXT
+	description TEXT,
+	cat INTEGER
 );
 COPY sites_tmp FROM :sites WITH DELIMITER '|';
 
@@ -27,9 +28,9 @@ UPDATE sites_tmp SET wkt='POINT(' || lon || ' ' || lat || ')';
 --
 -- Note that the meaning of "iscell" is "a thing with radios on it".
 -- That column is what causes viewsheds and such to be calculated.
-INSERT INTO site (name, description, iscell, x, y, network)
+INSERT INTO site (name, description, iscell, cat, x, y, network)
 	(SELECT
-		name, description, TRUE,
+		name, description, TRUE, cat,
 		ST_X(ST_Transform(ST_GeomFromText(wkt, 4326), 27700)),
 		ST_Y(ST_Transform(ST_GeomFromText(wkt, 4326), 27700)),
 		(SELECT id FROM network WHERE name='WCB')

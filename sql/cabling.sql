@@ -9,5 +9,6 @@
 BEGIN TRANSACTION;
 INSERT INTO cable_type (name, cost) VALUES
 	('Armoured 1.5mm 3-core', 1),
+	('OS1 4-core SWA', 4),
 	('CAT5 Ethernet, shielded', 0.36);
 COMMIT;

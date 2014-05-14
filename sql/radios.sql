@@ -14,5 +14,6 @@ INSERT INTO radio_type (name, integrated, power, cost) VALUES
 	('LOCOM5', TRUE, 5.5, 46),
 	('PTP L6800', FALSE, 71, 2000),
 	('PTP U6800', FALSE, 71, 2000),
-	('PTP 07800', FALSE, 71, 2000);
+	('PTP 07800', FALSE, 71, 2000),
+	('TLGL1-06', FALSE, 36, 3000);
 COMMIT;

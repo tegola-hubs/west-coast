@@ -23,6 +23,7 @@ CREATE TABLE site (
 	x		DOUBLE PRECISION,
 	y		DOUBLE PRECISION,
 	iscell		BOOLEAN DEFAULT TRUE,
+	cat		INTEGER DEFAULT 1 NOT NULL,
 	UNIQUE(network, name)
 );
 SELECT AddGeometryColumn('public', 'site', 'geom', 27700, 'POINT', 2);
@@ -65,6 +66,7 @@ CREATE TABLE antenna (
 	mechanical_tilt		SMALLINT DEFAULT 0 NOT NULL,
 	height_agl		DOUBLE PRECISION DEFAULT 3.0 NOT NULL,
 	ptp			INTEGER REFERENCES site(id),
+	cat			INTEGER DEFAULT 1 NOT NULL,
 	UNIQUE(cell, name)
 );
 
@@ -116,6 +118,7 @@ CREATE VIEW ptp AS
 		c2.id AS c2, c2.name AS c2name,
 		a1.id AS a1, a2.id AS a2,
 		c1.network AS n1, c2.network AS n2,
+		a1.cat AS cat,
 		ST_MakeLine(c1.geom, c2.geom) AS geom
 	FROM antenna AS a1
 		JOIN antenna AS a2 ON a1.ptp = a2.cell AND a2.ptp = a1.cell
